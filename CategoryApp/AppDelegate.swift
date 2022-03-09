@@ -9,28 +9,70 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var window: UIWindow?
+    private var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+
+        navigationController = UINavigationController(rootViewController: makeCategoryListController())
+
+        window?.rootViewController = navigationController
         return true
     }
+}
 
-    // MARK: UISceneSession Lifecycle
+private extension AppDelegate {
+    func makeCategoryListController() -> UIViewController {
+        let categoryListController = CategoryListViewController()
+        let categoryListViweModel = CategoryListViewModel()
+        
+        categoryListController.configure(categoryListViewModel: categoryListViweModel)
 
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        categoryListViweModel.onWorkButton = { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(self.makeWorkViewController(), animated: true)
+        }
+        
+        categoryListViweModel.onHobbyButton = { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(self.makeHobbyViewController(), animated: true)
+        }
+        
+        categoryListViweModel.onLifeButton = { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(self.makeLifeViewController(), animated: true)
+        }
+        
+        return categoryListController
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    
+    func makeWorkViewController() -> UIViewController {
+        let workViewController = WorkViewController()
+        let workViewModel = WorkViewModel()
+        
+        workViewController.configure(workViewModel: workViewModel)
+        
+        return workViewController
     }
-
-
+    
+    func makeHobbyViewController() -> UIViewController {
+        let hobbyViewController = HobbyViewController()
+        let hobbyViewModel = HobbyViewModel()
+        
+        hobbyViewController.configure(hobbyViewModel: hobbyViewModel)
+        
+        return hobbyViewController
+    }
+    
+    func makeLifeViewController() -> UIViewController {
+        let lifeViewController = LifeViewController()
+        let lifeViewModel = LifeViewModel()
+        
+        lifeViewController.configure(lifeViewModel: lifeViewModel)
+        
+        return lifeViewController
+    }
 }
 
