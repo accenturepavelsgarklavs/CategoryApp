@@ -20,7 +20,10 @@
 		1BDB4B3927D8F037004DF2BA /* LifeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3827D8F037004DF2BA /* LifeViewModel.swift */; };
 		1BDB4B3B27D8F05F004DF2BA /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3A27D8F05F004DF2BA /* HobbyViewModel.swift */; };
 		1BDB4B3D27D8F07A004DF2BA /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3C27D8F07A004DF2BA /* HobbyViewController.swift */; };
-		1BDB4B3F27D8F8D8004DF2BA /* SubcategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3E27D8F8D8004DF2BA /* SubcategoryCollectionView.swift */; };
+		1BDB4B4427D9E5AE004DF2BA /* SubcategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4327D9E5AE004DF2BA /* SubcategoryCollectionView.swift */; };
+		1BDB4B4727D9F442004DF2BA /* BaseSubcategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4627D9F442004DF2BA /* BaseSubcategoryView.swift */; };
+		1BDB4B4A27DA0255004DF2BA /* AddSFSymbolToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4927DA0255004DF2BA /* AddSFSymbolToText.swift */; };
+		1BDB4B4D27DA3B2A004DF2BA /* SubcategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4C27DA3B2A004DF2BA /* SubcategoryModel.swift */; };
 		673FD8D6232F0F2182E562F1 /* Pods_CategoryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA55DF08F577BC8BDA315FE8 /* Pods_CategoryApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +43,10 @@
 		1BDB4B3827D8F037004DF2BA /* LifeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeViewModel.swift; sourceTree = "<group>"; };
 		1BDB4B3A27D8F05F004DF2BA /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
 		1BDB4B3C27D8F07A004DF2BA /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
-		1BDB4B3E27D8F8D8004DF2BA /* SubcategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCollectionView.swift; sourceTree = "<group>"; };
+		1BDB4B4327D9E5AE004DF2BA /* SubcategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCollectionView.swift; sourceTree = "<group>"; };
+		1BDB4B4627D9F442004DF2BA /* BaseSubcategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSubcategoryView.swift; sourceTree = "<group>"; };
+		1BDB4B4927DA0255004DF2BA /* AddSFSymbolToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSFSymbolToText.swift; sourceTree = "<group>"; };
+		1BDB4B4C27DA3B2A004DF2BA /* SubcategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryModel.swift; sourceTree = "<group>"; };
 		60A6D637B82258A7218F6DD1 /* Pods-CategoryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryApp.debug.xcconfig"; path = "Target Support Files/Pods-CategoryApp/Pods-CategoryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		881EA49D3112EACBF262046D /* Pods-CategoryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryApp.release.xcconfig"; path = "Target Support Files/Pods-CategoryApp/Pods-CategoryApp.release.xcconfig"; sourceTree = "<group>"; };
 		FA55DF08F577BC8BDA315FE8 /* Pods_CategoryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CategoryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +85,8 @@
 		1BDB4B0627D8A7C7004DF2BA /* CategoryApp */ = {
 			isa = PBXGroup;
 			children = (
+				1BDB4B4B27DA3B1B004DF2BA /* Model */,
+				1BDB4B4827DA023A004DF2BA /* Utils */,
 				1BDB4B2727D8B360004DF2BA /* Resources */,
 				1BDB4B2127D8AE0E004DF2BA /* Views */,
 				1BDB4B1B27D8A831004DF2BA /* Controllers */,
@@ -131,7 +139,8 @@
 		1BDB4B2127D8AE0E004DF2BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1BDB4B4027D8F8EA004DF2BA /* SubcategoryCollectionView */,
+				1BDB4B4527D9F41F004DF2BA /* BaseSubcategoryView */,
+				1BDB4B4227D9E592004DF2BA /* SubcategoryCollectionView */,
 				1BDB4B2227D8AE1A004DF2BA /* SubcategoryCell */,
 			);
 			path = Views;
@@ -170,12 +179,36 @@
 			path = CategoryListViewController;
 			sourceTree = "<group>";
 		};
-		1BDB4B4027D8F8EA004DF2BA /* SubcategoryCollectionView */ = {
+		1BDB4B4227D9E592004DF2BA /* SubcategoryCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				1BDB4B3E27D8F8D8004DF2BA /* SubcategoryCollectionView.swift */,
+				1BDB4B4327D9E5AE004DF2BA /* SubcategoryCollectionView.swift */,
 			);
 			path = SubcategoryCollectionView;
+			sourceTree = "<group>";
+		};
+		1BDB4B4527D9F41F004DF2BA /* BaseSubcategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				1BDB4B4627D9F442004DF2BA /* BaseSubcategoryView.swift */,
+			);
+			path = BaseSubcategoryView;
+			sourceTree = "<group>";
+		};
+		1BDB4B4827DA023A004DF2BA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1BDB4B4927DA0255004DF2BA /* AddSFSymbolToText.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1BDB4B4B27DA3B1B004DF2BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BDB4B4C27DA3B2A004DF2BA /* SubcategoryModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E5589D88DBA75B70A31DE507 /* Frameworks */ = {
@@ -310,16 +343,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BDB4B4A27DA0255004DF2BA /* AddSFSymbolToText.swift in Sources */,
 				1BDB4B2527D8AE66004DF2BA /* SubcategoryCell.swift in Sources */,
 				1BDB4B3D27D8F07A004DF2BA /* HobbyViewController.swift in Sources */,
 				1BDB4B3927D8F037004DF2BA /* LifeViewModel.swift in Sources */,
 				1BDB4B3727D8EFF2004DF2BA /* LifeViewController.swift in Sources */,
 				1BDB4B3527D8EEEE004DF2BA /* WorkViewModel.swift in Sources */,
 				1BDB4B3B27D8F05F004DF2BA /* HobbyViewModel.swift in Sources */,
-				1BDB4B3F27D8F8D8004DF2BA /* SubcategoryCollectionView.swift in Sources */,
+				1BDB4B4D27DA3B2A004DF2BA /* SubcategoryModel.swift in Sources */,
+				1BDB4B4427D9E5AE004DF2BA /* SubcategoryCollectionView.swift in Sources */,
 				1BDB4B0827D8A7C7004DF2BA /* AppDelegate.swift in Sources */,
 				1BDB4B3327D8EE57004DF2BA /* WorkViewController.swift in Sources */,
 				1BDB4B1D27D8A857004DF2BA /* CategoryListViewController.swift in Sources */,
+				1BDB4B4727D9F442004DF2BA /* BaseSubcategoryView.swift in Sources */,
 				1BDB4B3127D8EBF4004DF2BA /* CategoryListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
