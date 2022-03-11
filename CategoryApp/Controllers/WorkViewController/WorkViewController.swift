@@ -11,18 +11,13 @@ final class WorkViewController: UIViewController {
     
     private var workViewModel: WorkViewModel?
     
-    private let subcategoryViewOne = BaseSubcategoryView()
-    private let subcategoryViewTwo = BaseSubcategoryView()
-    
-    private let scrollView = UIScrollView()
+    private var collectionView: UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "view-background-color")
         setupNavigationBar()
-        setupScrollView()
-        setupSubcategoryViewOne()
-        setupSubcategoryViewTwo()
+        setupCollectionView()
     }
     
     func configure(workViewModel: WorkViewModel) {
@@ -36,45 +31,44 @@ private extension WorkViewController {
         navigationItem.title = "Work"
     }
     
-    func setupSubcategoryViewOne() {
-        scrollView.addSubview(subcategoryViewOne)
+    func setupCollectionView() {
         
-        let subcategoryViewOneModel = SubcategoryModel(subcategoryName: "Sub Category 1", subcategoryDescription: "We need to test it.", subcategoryImage: "cell-background-image")
-        subcategoryViewOne.setSubcategoryInfo(subcategoryModel: subcategoryViewOneModel)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 290, height: 325)
         
-        subcategoryViewOne.configure()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        subcategoryViewOne.snp.makeConstraints { make in
-            make.top.equalTo(scrollView.snp.top)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(290)
-            make.height.equalTo(325)
+        collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseIdentifier)
+        
+        if let collectionView = collectionView {
+            view.addSubview(collectionView)
+            collectionView.dataSource = self
+            collectionView.backgroundColor = .clear
+            
+            collectionView.snp.makeConstraints { make in
+                make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+                make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+                make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            }
         }
     }
-    
-    func setupSubcategoryViewTwo() {
-        scrollView.addSubview(subcategoryViewTwo)
+}
+
+extension WorkViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifier, for: indexPath) as? CategoryCell else { return .init() }
         
-        let subcategoryViewTwoModel = SubcategoryModel(subcategoryName: "Sub Category 2", subcategoryDescription: "We need to test it second time.", subcategoryImage: "cell-background-image")
-        subcategoryViewTwo.setSubcategoryInfo(subcategoryModel: subcategoryViewTwoModel)
-        subcategoryViewTwo.configure()
+        cell.setupSubCategory(model: TaskManager.shared.data[indexPath.row])
         
-        subcategoryViewTwo.snp.makeConstraints { make in
-            make.top.equalTo(subcategoryViewOne.snp.bottom).offset(30)
-            make.bottom.equalTo(scrollView.snp.bottom)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(290)
-            make.height.equalTo(325)
-        }
+        return cell
     }
     
-    func setupScrollView() {
-        view.addSubview(scrollView)
-        
-        scrollView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if TaskManager.shared.data.count > 4 {
+            return 4
+        } else {
+            return TaskManager.shared.data.count
         }
     }
 }

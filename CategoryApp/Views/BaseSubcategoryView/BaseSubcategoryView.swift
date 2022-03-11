@@ -12,8 +12,10 @@ class BaseSubcategoryView: UIView {
     private var subcategoryCollectionView: SubcategoryCollectionView?
     private var subcategoryModel: SubcategoryModel?
     
-    private var seeAllButton = UIButton()
-    private var subcategoryTitleLabel = UILabel()
+    private var viewModel = BaseSubcategoryViewModel()
+    
+    private let seeAllButton = UIButton()
+    private let subcategoryTitleLabel = UILabel()
     
     func configure() {
         setupSubcategoryTitleLabel()
@@ -36,7 +38,7 @@ private extension BaseSubcategoryView {
         subcategoryCollectionView = SubcategoryCollectionView(frame: .zero, collectionViewLayout: layout)
         
         if let subcategoryCollectionView = subcategoryCollectionView, let subcategoryModel = subcategoryModel {
-            subcategoryCollectionView.setSubcategoryInfo(subcategoryModel: subcategoryModel)
+            subcategoryCollectionView.setSubcategoryInfo(subcategoryModel: subcategoryModel.main)
             subcategoryCollectionView.configure()
             self.addSubview(subcategoryCollectionView)
             
@@ -75,5 +77,12 @@ private extension BaseSubcategoryView {
             make.height.equalTo(25)
             make.top.trailing.equalToSuperview()
         }
+        
+        seeAllButton.addTarget(self, action: #selector(didTapSeeAllButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapSeeAllButton() {
+        viewModel.onSeeAllButton?()
+        print("See all button tapped")
     }
 }

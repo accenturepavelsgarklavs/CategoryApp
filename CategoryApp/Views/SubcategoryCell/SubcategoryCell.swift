@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SubcategoryCell: UICollectionViewCell {
+final class SubcategoryCell: UICollectionViewCell {
 
     static let reuseIdentifier = "SubcategoryCell"
     
@@ -28,7 +28,7 @@ class SubcategoryCell: UICollectionViewCell {
         setupCell()
     }
     
-    func setCellInfo(model: SubcategoryModel) {
+    func setCellInfo(model: SubcategoryModel.Main) {
         cellDescriptionLabel.text = model.subcategoryDescription
         background = UIImage(named: model.subcategoryImage)
     }

@@ -10,6 +10,10 @@ import UIKit
 
 struct SubcategoryModel {
     let subcategoryName: String
-    let subcategoryDescription: String
-    let subcategoryImage: String
+    let main: [Main]
+    
+    struct Main {
+        let subcategoryDescription: String
+        let subcategoryImage: String
+    }
 }
