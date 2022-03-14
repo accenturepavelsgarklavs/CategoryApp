@@ -71,7 +71,7 @@ private extension BaseSubcategoryView {
         seeAllButton.setTitleColor(.lightGray, for: .highlighted)
         seeAllButton.titleLabel?.font = UIFont(name: "Fredoka", size: 16)
         seeAllButton.backgroundColor = .clear
-        seeAllButton.setAttributedTitle(addSFSymbolToText.makeText(text: "See All", symbol: "greaterthan.circle.fill", tintColor: UIColor(named: "see-all-button-color") ?? .black), for: .normal)
+        seeAllButton.setAttributedTitle(AddSFSymbolToText.makeText(text: "See All", symbol: "greaterthan.circle.fill", tintColor: UIColor(named: "see-all-button-color") ?? .black), for: .normal)
         
         seeAllButton.snp.makeConstraints { make in
             make.height.equalTo(25)
@@ -84,5 +84,6 @@ private extension BaseSubcategoryView {
     @objc func didTapSeeAllButton() {
         viewModel.onSeeAllButton?()
         print("See all button tapped")
+        print(subcategoryCollectionView?.selectedItem)
     }
 }

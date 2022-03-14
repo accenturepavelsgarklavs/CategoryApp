@@ -65,10 +65,7 @@ extension WorkViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if TaskManager.shared.data.count > 4 {
-            return 4
-        } else {
-            return TaskManager.shared.data.count
-        }
+        let tasksCount = TaskManager.shared.data.count
+        return tasksCount <= 4 ? tasksCount : 4
     }
 }

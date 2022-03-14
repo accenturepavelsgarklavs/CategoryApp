@@ -26,21 +26,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
     func makeCategoryListController() -> UIViewController {
         let categoryListController = CategoryListViewController()
-        let categoryListViweModel = CategoryListViewModel()
+        let categoryListViewModel = CategoryListViewModel()
         
-        categoryListController.configure(categoryListViewModel: categoryListViweModel)
+        categoryListController.configure(categoryListViewModel: categoryListViewModel)
 
-        categoryListViweModel.onWorkButton = { [weak self] in
+        categoryListViewModel.onWorkButton = { [weak self] in
             guard let self = self else { return }
             self.navigationController?.pushViewController(self.makeWorkViewController(), animated: true)
         }
         
-        categoryListViweModel.onHobbyButton = { [weak self] in
+        categoryListViewModel.onHobbyButton = { [weak self] in
             guard let self = self else { return }
             self.navigationController?.pushViewController(self.makeHobbyViewController(), animated: true)
         }
         
-        categoryListViweModel.onLifeButton = { [weak self] in
+        categoryListViewModel.onLifeButton = { [weak self] in
             guard let self = self else { return }
             self.navigationController?.pushViewController(self.makeLifeViewController(), animated: true)
         }

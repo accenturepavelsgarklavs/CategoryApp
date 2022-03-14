@@ -10,6 +10,8 @@ import UIKit
 final class SubcategoryCollectionView: UICollectionView {
     
     private var subcategoryModel: [SubcategoryModel.Main]?
+    
+    var selectedItem: Int?
 
     func configure() {
         self.backgroundColor = UIColor(named: "view-background-color")
@@ -25,12 +27,7 @@ private extension SubcategoryCollectionView {
     func setupCollection() {
         self.register(SubcategoryCell.self, forCellWithReuseIdentifier: SubcategoryCell.reuseIdentifier)
         self.dataSource = self
-        self.delegate = self
     }
-}
-
-extension SubcategoryCollectionView: UICollectionViewDelegate {
-    
 }
 
 extension SubcategoryCollectionView: UICollectionViewDataSource {

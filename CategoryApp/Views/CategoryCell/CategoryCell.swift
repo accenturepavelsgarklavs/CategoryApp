@@ -13,22 +13,7 @@ final class CategoryCell: UICollectionViewCell {
     
     private let subcategory = BaseSubcategoryView()
     
-    private var subCategoryModel: SubcategoryModel?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     func setupSubCategory(model: SubcategoryModel) {
-        subCategoryModel = model
         subcategory.setSubcategoryInfo(subcategoryModel: model)
         subcategory.configure()
         contentView.addSubview(subcategory)

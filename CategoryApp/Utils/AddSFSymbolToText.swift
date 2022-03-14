@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct addSFSymbolToText {
+struct AddSFSymbolToText {
     static func makeText(text: String, symbol: String, tintColor: UIColor) -> NSMutableAttributedString {
         let imageAttachment = NSTextAttachment()
         imageAttachment.image = UIImage(systemName: symbol)?.withTintColor(tintColor)

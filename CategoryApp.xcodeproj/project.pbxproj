@@ -27,6 +27,7 @@
 		1BDB4B4F27DB33E8004DF2BA /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4E27DB33E8004DF2BA /* TaskManager.swift */; };
 		1BDB4B5427DB50D4004DF2BA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5327DB50D4004DF2BA /* CategoryCell.swift */; };
 		1BDB4B5627DB86AE004DF2BA /* BaseSubcategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5527DB86AE004DF2BA /* BaseSubcategoryViewModel.swift */; };
+		1BDB4B5927DF2E0E004DF2BA /* BaseSeeAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5827DF2E0E004DF2BA /* BaseSeeAllView.swift */; };
 		673FD8D6232F0F2182E562F1 /* Pods_CategoryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA55DF08F577BC8BDA315FE8 /* Pods_CategoryApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		1BDB4B4E27DB33E8004DF2BA /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		1BDB4B5327DB50D4004DF2BA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		1BDB4B5527DB86AE004DF2BA /* BaseSubcategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSubcategoryViewModel.swift; sourceTree = "<group>"; };
+		1BDB4B5827DF2E0E004DF2BA /* BaseSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSeeAllView.swift; sourceTree = "<group>"; };
 		60A6D637B82258A7218F6DD1 /* Pods-CategoryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryApp.debug.xcconfig"; path = "Target Support Files/Pods-CategoryApp/Pods-CategoryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		881EA49D3112EACBF262046D /* Pods-CategoryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryApp.release.xcconfig"; path = "Target Support Files/Pods-CategoryApp/Pods-CategoryApp.release.xcconfig"; sourceTree = "<group>"; };
 		FA55DF08F577BC8BDA315FE8 /* Pods_CategoryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CategoryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 		1BDB4B2127D8AE0E004DF2BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1BDB4B5727DF2DD7004DF2BA /* BaseSeeAllView */,
 				1BDB4B5227DB5099004DF2BA /* CategoryCell */,
 				1BDB4B4527D9F41F004DF2BA /* BaseSubcategoryView */,
 				1BDB4B4227D9E592004DF2BA /* SubcategoryCollectionView */,
@@ -234,6 +237,14 @@
 				1BDB4B5327DB50D4004DF2BA /* CategoryCell.swift */,
 			);
 			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		1BDB4B5727DF2DD7004DF2BA /* BaseSeeAllView */ = {
+			isa = PBXGroup;
+			children = (
+				1BDB4B5827DF2E0E004DF2BA /* BaseSeeAllView.swift */,
+			);
+			path = BaseSeeAllView;
 			sourceTree = "<group>";
 		};
 		E5589D88DBA75B70A31DE507 /* Frameworks */ = {
@@ -373,6 +384,7 @@
 				1BDB4B2527D8AE66004DF2BA /* SubcategoryCell.swift in Sources */,
 				1BDB4B3D27D8F07A004DF2BA /* HobbyViewController.swift in Sources */,
 				1BDB4B3927D8F037004DF2BA /* LifeViewModel.swift in Sources */,
+				1BDB4B5927DF2E0E004DF2BA /* BaseSeeAllView.swift in Sources */,
 				1BDB4B3727D8EFF2004DF2BA /* LifeViewController.swift in Sources */,
 				1BDB4B3527D8EEEE004DF2BA /* WorkViewModel.swift in Sources */,
 				1BDB4B3B27D8F05F004DF2BA /* HobbyViewModel.swift in Sources */,
