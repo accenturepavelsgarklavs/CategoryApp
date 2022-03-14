@@ -10,22 +10,25 @@ import UIKit
 final class SubcategoryCollectionView: UICollectionView {
     
     private var subcategoryModel: [SubcategoryModel.Main]?
-    
-    var selectedItem: Int?
+    private var workViewModel: WorkViewModel?
+    private var collectionIndex: Int?
 
     func configure() {
         self.backgroundColor = UIColor(named: "view-background-color")
         setupCollection()
     }
     
-    func setSubcategoryInfo(subcategoryModel: [SubcategoryModel.Main]) {
+    func setSubcategoryInfo(subcategoryModel: [SubcategoryModel.Main], workViewModel: WorkViewModel, collectionIndex: Int) {
         self.subcategoryModel = subcategoryModel
+        self.workViewModel = workViewModel
+        self.collectionIndex = collectionIndex
     }
 }
 
 private extension SubcategoryCollectionView {
     func setupCollection() {
         self.register(SubcategoryCell.self, forCellWithReuseIdentifier: SubcategoryCell.reuseIdentifier)
+        self.register(HeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCell.reusableIdentifier)
         self.dataSource = self
     }
 }
@@ -50,4 +53,16 @@ extension SubcategoryCollectionView: UICollectionViewDataSource {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCell.reusableIdentifier, for: indexPath) as? HeaderCell, let workViewModel = workViewModel, let collectionIndex = collectionIndex else { return .init() }
+            
+            header.setWorkViewModel(workViewModel: workViewModel, index: collectionIndex)
+            
+            header.configure()
+            return header
+        default: return .init()
+        }
+    }
 }

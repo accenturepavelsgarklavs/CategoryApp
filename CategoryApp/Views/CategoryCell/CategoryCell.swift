@@ -13,8 +13,8 @@ final class CategoryCell: UICollectionViewCell {
     
     private let subcategory = BaseSubcategoryView()
     
-    func setupSubCategory(model: SubcategoryModel) {
-        subcategory.setSubcategoryInfo(subcategoryModel: model)
+    func setupSubCategory(model: SubcategoryModel, workViewModel: WorkViewModel, index: Int) {
+        subcategory.setSubcategoryInfo(subcategoryModel: model, workViewModel: workViewModel, index: index)
         subcategory.configure()
         contentView.addSubview(subcategory)
         

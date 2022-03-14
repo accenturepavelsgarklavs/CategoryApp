@@ -10,7 +10,6 @@ import UIKit
 final class WorkViewController: UIViewController {
     
     private var workViewModel: WorkViewModel?
-    
     private var collectionView: UICollectionView?
     
     override func viewDidLoad() {
@@ -27,15 +26,17 @@ final class WorkViewController: UIViewController {
 
 private extension WorkViewController {
     func setupNavigationBar() {
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Fredoka", size: 24)!]
+        guard let font = UIFont(name: "Fredoka", size: 24) else { return }
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = .black
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black, NSAttributedString.Key.font: font]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationItem.title = "Work"
     }
     
     func setupCollectionView() {
-        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 290, height: 325)
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
@@ -44,12 +45,15 @@ private extension WorkViewController {
         if let collectionView = collectionView {
             view.addSubview(collectionView)
             collectionView.dataSource = self
+            collectionView.delegate = self
             collectionView.backgroundColor = .clear
+            collectionView.showsVerticalScrollIndicator = false
             
             collectionView.snp.makeConstraints { make in
                 make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
-                make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
-                make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+                make.bottom.equalTo(view.safeAreaLayoutGuide).inset(15)
+                make.leading.equalToSuperview().offset(15)
+                make.trailing.equalToSuperview().inset(15)
             }
         }
     }
@@ -57,15 +61,21 @@ private extension WorkViewController {
 
 extension WorkViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifier, for: indexPath) as? CategoryCell else { return .init() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifier, for: indexPath) as? CategoryCell, let workViewModel = workViewModel else { return .init() }
         
-        cell.setupSubCategory(model: TaskManager.shared.data[indexPath.row])
+        cell.setupSubCategory(model: workViewModel.taskManager[indexPath.row], workViewModel: workViewModel, index: indexPath.row)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let tasksCount = TaskManager.shared.data.count
+        guard let tasksCount = workViewModel?.taskManager.count else { return .init() }
         return tasksCount <= 4 ? tasksCount : 4
+    }
+}
+
+extension WorkViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 290, height: 350)
     }
 }

@@ -12,6 +12,7 @@ final class SubcategoryCell: UICollectionViewCell {
     static let reuseIdentifier = "SubcategoryCell"
     
     private let cellDescriptionLabel = UILabel()
+    
     private var background: UIImage?
     
     override init(frame: CGRect) {
