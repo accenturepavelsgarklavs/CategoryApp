@@ -93,7 +93,7 @@ private extension CategoryListViewController {
         view.addSubview(titleLabel)
         
         titleLabel.text = "Categories"
-        titleLabel.font = UIFont(name: "Fredoka", size: 64)
+        titleLabel.font = UIFont(name: "Fredoka", size: 58)
         
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
