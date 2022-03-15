@@ -11,7 +11,6 @@ final class SeeAllViewController: UIViewController {
     
     private let backgroundView = UIView()
     
-    private var index: Int?
     private var collectionView: UICollectionView?
     private var seeAllViewModel: SeeAllViewModel?
     
@@ -26,15 +25,11 @@ final class SeeAllViewController: UIViewController {
     func configure(seeAllViewModel: SeeAllViewModel) {
         self.seeAllViewModel = seeAllViewModel
     }
-    
-    func setIndexOfModel(index: Int) {
-        self.index = index
-    }
 }
 
 private extension SeeAllViewController {
     func setupNavigationBar() {
-        guard let index = index else { return }
+        guard let index = seeAllViewModel?.index else { return }
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Fredoka", size: 24)!]
         navigationItem.title = seeAllViewModel?.taskManager[index].subcategoryName
     }
@@ -74,12 +69,12 @@ private extension SeeAllViewController {
 
 extension SeeAllViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let index = index, let task = seeAllViewModel?.taskManager else { return .init() }
+        guard let index = seeAllViewModel?.index, let task = seeAllViewModel?.taskManager else { return .init() }
         return task[index].main.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubcategoryCell.reuseIdentifier, for: indexPath) as? SubcategoryCell, let index = index, let task = seeAllViewModel?.taskManager else { return .init() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubcategoryCell.reuseIdentifier, for: indexPath) as? SubcategoryCell, let index = seeAllViewModel?.index, let task = seeAllViewModel?.taskManager else { return .init() }
      
         let model = task[index].main[indexPath.row]
         

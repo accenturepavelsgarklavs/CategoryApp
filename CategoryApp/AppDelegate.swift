@@ -84,7 +84,7 @@ private extension AppDelegate {
         let seeAllViewController = SeeAllViewController()
         let seeAllViewModel = SeeAllViewModel()
         
-        seeAllViewController.setIndexOfModel(index: index)
+        seeAllViewModel.setIndexOfModel(index: index)
         seeAllViewController.configure(seeAllViewModel: seeAllViewModel)
         
         return seeAllViewController
