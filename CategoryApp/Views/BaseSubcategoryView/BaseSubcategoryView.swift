@@ -11,20 +11,17 @@ class BaseSubcategoryView: UIView {
     
     private var subcategoryCollectionView: SubcategoryCollectionView?
     private var subcategoryModel: SubcategoryModel?
-    
-    private var viewModel = BaseSubcategoryViewModel()
-    
-    private let seeAllButton = UIButton()
-    private let subcategoryTitleLabel = UILabel()
+    private var workViewModel: WorkViewModel?
+    private var collectionIndex: Int?
     
     func configure() {
-        setupSubcategoryTitleLabel()
-        setupSeeAllButton()
         setupSubcategoryCollectionView()
     }
     
-    func setSubcategoryInfo(subcategoryModel: SubcategoryModel) {
+    func setSubcategoryInfo(subcategoryModel: SubcategoryModel, workViewModel: WorkViewModel, index: Int) {
         self.subcategoryModel = subcategoryModel
+        self.workViewModel = workViewModel
+        self.collectionIndex = index
     }
     
 }
@@ -33,57 +30,31 @@ private extension BaseSubcategoryView {
     func setupSubcategoryCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 140, height: 140)
         
         subcategoryCollectionView = SubcategoryCollectionView(frame: .zero, collectionViewLayout: layout)
         
-        if let subcategoryCollectionView = subcategoryCollectionView, let subcategoryModel = subcategoryModel {
-            subcategoryCollectionView.setSubcategoryInfo(subcategoryModel: subcategoryModel.main)
+        subcategoryCollectionView?.delegate = self
+        
+        if let subcategoryCollectionView = subcategoryCollectionView, let subcategoryModel = subcategoryModel, let workViewModel = workViewModel, let collectionIndex = collectionIndex {
+            subcategoryCollectionView.setSubcategoryInfo(subcategoryModel: subcategoryModel.main, workViewModel: workViewModel, collectionIndex: collectionIndex)
             subcategoryCollectionView.configure()
             self.addSubview(subcategoryCollectionView)
             
             subcategoryCollectionView.snp.makeConstraints { make in
-                make.top.equalTo(subcategoryTitleLabel.snp.bottom).offset(10)
+                make.top.equalToSuperview().offset(10)
                 make.leading.trailing.equalToSuperview()
                 make.bottom.equalToSuperview()
             }
         }
     }
-    
-    func setupSubcategoryTitleLabel() {
-        self.addSubview(subcategoryTitleLabel)
-        
-        subcategoryTitleLabel.text = subcategoryModel?.subcategoryName
-        subcategoryTitleLabel.font = UIFont(name: "Fredoka", size: 20)
-        subcategoryTitleLabel.textColor = .black
-        
-        subcategoryTitleLabel.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-        }
+}
+
+extension BaseSubcategoryView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 140, height: 140)
     }
     
-    func setupSeeAllButton() {
-        self.addSubview(seeAllButton)
-        
-        seeAllButton.setTitleColor(UIColor(named: "see-all-button-color"), for: .normal)
-        seeAllButton.setTitleColor(.lightGray, for: .highlighted)
-        seeAllButton.titleLabel?.font = UIFont(name: "Fredoka", size: 16)
-        seeAllButton.backgroundColor = .clear
-        seeAllButton.setAttributedTitle(AddSFSymbolToText.makeText(text: "See All", symbol: "greaterthan.circle.fill", tintColor: UIColor(named: "see-all-button-color") ?? .black), for: .normal)
-        
-        seeAllButton.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.top.trailing.equalToSuperview()
-        }
-        
-        seeAllButton.addTarget(self, action: #selector(didTapSeeAllButton), for: .touchUpInside)
-    }
-    
-    @objc func didTapSeeAllButton() {
-        viewModel.onSeeAllButton?()
-        print("See all button tapped")
-        print(subcategoryCollectionView?.selectedItem)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: 140, height: 25)
     }
 }

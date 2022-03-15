@@ -52,6 +52,11 @@ private extension AppDelegate {
         let workViewController = WorkViewController()
         let workViewModel = WorkViewModel()
         
+        workViewModel.onSeeAllButton = { [weak self] index in
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(self.makeSeeAllViewController(index: index), animated: true)
+        }
+        
         workViewController.configure(workViewModel: workViewModel)
         
         return workViewController
@@ -73,6 +78,16 @@ private extension AppDelegate {
         lifeViewController.configure(lifeViewModel: lifeViewModel)
         
         return lifeViewController
+    }
+    
+    func makeSeeAllViewController(index: Int) -> UIViewController {
+        let seeAllViewController = SeeAllViewController()
+        let seeAllViewModel = SeeAllViewModel()
+        
+        seeAllViewModel.setIndexOfModel(index: index)
+        seeAllViewController.configure(seeAllViewModel: seeAllViewModel)
+        
+        return seeAllViewController
     }
 }
 

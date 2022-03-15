@@ -8,5 +8,7 @@
 import Foundation
 
 final class WorkViewModel {
+    let taskManager = TaskManager.shared.data
     
+    var onSeeAllButton: ((Int) -> Void)?
 }

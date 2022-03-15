@@ -39,12 +39,16 @@ struct TaskManager {
         let subTwoCellThreeData: SubcategoryModel.Main = SubcategoryModel.Main(subcategoryDescription: "Sub two test 3", subcategoryImage: "cell-background-image")
         let subTwoCellFourData: SubcategoryModel.Main = SubcategoryModel.Main(subcategoryDescription: "Sub two test 4", subcategoryImage: "cell-background-image")
         let subTwoCellFiveData: SubcategoryModel.Main = SubcategoryModel.Main(subcategoryDescription: "Sub two test 5", subcategoryImage: "cell-background-image")
+        let subTwoCellSixData: SubcategoryModel.Main = SubcategoryModel.Main(subcategoryDescription: "Sub two test 6", subcategoryImage: "cell-background-image")
+        let subTwoCellSevenData: SubcategoryModel.Main = SubcategoryModel.Main(subcategoryDescription: "Sub two test 7", subcategoryImage: "cell-background-image")
         
         subcategoryTwoCellData.append(subTwoCellOneData)
         subcategoryTwoCellData.append(subTwoCellTwoData)
         subcategoryTwoCellData.append(subTwoCellThreeData)
         subcategoryTwoCellData.append(subTwoCellFourData)
         subcategoryTwoCellData.append(subTwoCellFiveData)
+        subcategoryTwoCellData.append(subTwoCellSixData)
+        subcategoryTwoCellData.append(subTwoCellSevenData)
         
         // Inserting into Fake Model
         let subcategoryOne = SubcategoryModel(subcategoryName: "Sub Category One", main: subcategoryOneCellData)

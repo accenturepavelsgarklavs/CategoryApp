@@ -17,8 +17,6 @@
 		1BDB4B3327D8EE57004DF2BA /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3227D8EE57004DF2BA /* WorkViewController.swift */; };
 		1BDB4B3527D8EEEE004DF2BA /* WorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3427D8EEEE004DF2BA /* WorkViewModel.swift */; };
 		1BDB4B3727D8EFF2004DF2BA /* LifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3627D8EFF2004DF2BA /* LifeViewController.swift */; };
-		1BDB4B3927D8F037004DF2BA /* LifeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3827D8F037004DF2BA /* LifeViewModel.swift */; };
-		1BDB4B3B27D8F05F004DF2BA /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3A27D8F05F004DF2BA /* HobbyViewModel.swift */; };
 		1BDB4B3D27D8F07A004DF2BA /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B3C27D8F07A004DF2BA /* HobbyViewController.swift */; };
 		1BDB4B4427D9E5AE004DF2BA /* SubcategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4327D9E5AE004DF2BA /* SubcategoryCollectionView.swift */; };
 		1BDB4B4727D9F442004DF2BA /* BaseSubcategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4627D9F442004DF2BA /* BaseSubcategoryView.swift */; };
@@ -26,8 +24,11 @@
 		1BDB4B4D27DA3B2A004DF2BA /* SubcategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4C27DA3B2A004DF2BA /* SubcategoryModel.swift */; };
 		1BDB4B4F27DB33E8004DF2BA /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B4E27DB33E8004DF2BA /* TaskManager.swift */; };
 		1BDB4B5427DB50D4004DF2BA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5327DB50D4004DF2BA /* CategoryCell.swift */; };
-		1BDB4B5627DB86AE004DF2BA /* BaseSubcategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5527DB86AE004DF2BA /* BaseSubcategoryViewModel.swift */; };
-		1BDB4B5927DF2E0E004DF2BA /* BaseSeeAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5827DF2E0E004DF2BA /* BaseSeeAllView.swift */; };
+		1BDB4B5C27DF3D21004DF2BA /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5B27DF3D21004DF2BA /* SeeAllViewController.swift */; };
+		1BDB4B5F27DF504D004DF2BA /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B5E27DF504D004DF2BA /* HeaderCell.swift */; };
+		1BDB4B6427DF84C8004DF2BA /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B6327DF84C8004DF2BA /* HobbyViewModel.swift */; };
+		1BDB4B6627DF84E6004DF2BA /* LifeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B6527DF84E6004DF2BA /* LifeViewModel.swift */; };
+		1BDB4B6827DF86F3004DF2BA /* SeeAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB4B6727DF86F3004DF2BA /* SeeAllViewModel.swift */; };
 		673FD8D6232F0F2182E562F1 /* Pods_CategoryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA55DF08F577BC8BDA315FE8 /* Pods_CategoryApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +45,6 @@
 		1BDB4B3227D8EE57004DF2BA /* WorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		1BDB4B3427D8EEEE004DF2BA /* WorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewModel.swift; sourceTree = "<group>"; };
 		1BDB4B3627D8EFF2004DF2BA /* LifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeViewController.swift; sourceTree = "<group>"; };
-		1BDB4B3827D8F037004DF2BA /* LifeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeViewModel.swift; sourceTree = "<group>"; };
-		1BDB4B3A27D8F05F004DF2BA /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
 		1BDB4B3C27D8F07A004DF2BA /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
 		1BDB4B4327D9E5AE004DF2BA /* SubcategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCollectionView.swift; sourceTree = "<group>"; };
 		1BDB4B4627D9F442004DF2BA /* BaseSubcategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSubcategoryView.swift; sourceTree = "<group>"; };
@@ -53,8 +52,11 @@
 		1BDB4B4C27DA3B2A004DF2BA /* SubcategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryModel.swift; sourceTree = "<group>"; };
 		1BDB4B4E27DB33E8004DF2BA /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		1BDB4B5327DB50D4004DF2BA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		1BDB4B5527DB86AE004DF2BA /* BaseSubcategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSubcategoryViewModel.swift; sourceTree = "<group>"; };
-		1BDB4B5827DF2E0E004DF2BA /* BaseSeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSeeAllView.swift; sourceTree = "<group>"; };
+		1BDB4B5B27DF3D21004DF2BA /* SeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
+		1BDB4B5E27DF504D004DF2BA /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		1BDB4B6327DF84C8004DF2BA /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
+		1BDB4B6527DF84E6004DF2BA /* LifeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeViewModel.swift; sourceTree = "<group>"; };
+		1BDB4B6727DF86F3004DF2BA /* SeeAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewModel.swift; sourceTree = "<group>"; };
 		60A6D637B82258A7218F6DD1 /* Pods-CategoryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryApp.debug.xcconfig"; path = "Target Support Files/Pods-CategoryApp/Pods-CategoryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		881EA49D3112EACBF262046D /* Pods-CategoryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryApp.release.xcconfig"; path = "Target Support Files/Pods-CategoryApp/Pods-CategoryApp.release.xcconfig"; sourceTree = "<group>"; };
 		FA55DF08F577BC8BDA315FE8 /* Pods_CategoryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CategoryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 		1BDB4B1B27D8A831004DF2BA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BDB4B5A27DF3D05004DF2BA /* SeeAllViewController */,
 				1BDB4B2F27D8EBCA004DF2BA /* CategoryListViewController */,
 				1BDB4B2027D8ACC5004DF2BA /* LifeViewController */,
 				1BDB4B1F27D8ACB6004DF2BA /* HobbyViewController */,
@@ -131,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDB4B3C27D8F07A004DF2BA /* HobbyViewController.swift */,
-				1BDB4B3A27D8F05F004DF2BA /* HobbyViewModel.swift */,
+				1BDB4B6327DF84C8004DF2BA /* HobbyViewModel.swift */,
 			);
 			path = HobbyViewController;
 			sourceTree = "<group>";
@@ -140,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDB4B3627D8EFF2004DF2BA /* LifeViewController.swift */,
-				1BDB4B3827D8F037004DF2BA /* LifeViewModel.swift */,
+				1BDB4B6527DF84E6004DF2BA /* LifeViewModel.swift */,
 			);
 			path = LifeViewController;
 			sourceTree = "<group>";
@@ -148,7 +151,7 @@
 		1BDB4B2127D8AE0E004DF2BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1BDB4B5727DF2DD7004DF2BA /* BaseSeeAllView */,
+				1BDB4B5D27DF502B004DF2BA /* HeaderCell */,
 				1BDB4B5227DB5099004DF2BA /* CategoryCell */,
 				1BDB4B4527D9F41F004DF2BA /* BaseSubcategoryView */,
 				1BDB4B4227D9E592004DF2BA /* SubcategoryCollectionView */,
@@ -202,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				1BDB4B4627D9F442004DF2BA /* BaseSubcategoryView.swift */,
-				1BDB4B5527DB86AE004DF2BA /* BaseSubcategoryViewModel.swift */,
 			);
 			path = BaseSubcategoryView;
 			sourceTree = "<group>";
@@ -239,12 +241,21 @@
 			path = CategoryCell;
 			sourceTree = "<group>";
 		};
-		1BDB4B5727DF2DD7004DF2BA /* BaseSeeAllView */ = {
+		1BDB4B5A27DF3D05004DF2BA /* SeeAllViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1BDB4B5827DF2E0E004DF2BA /* BaseSeeAllView.swift */,
+				1BDB4B5B27DF3D21004DF2BA /* SeeAllViewController.swift */,
+				1BDB4B6727DF86F3004DF2BA /* SeeAllViewModel.swift */,
 			);
-			path = BaseSeeAllView;
+			path = SeeAllViewController;
+			sourceTree = "<group>";
+		};
+		1BDB4B5D27DF502B004DF2BA /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BDB4B5E27DF504D004DF2BA /* HeaderCell.swift */,
+			);
+			path = HeaderCell;
 			sourceTree = "<group>";
 		};
 		E5589D88DBA75B70A31DE507 /* Frameworks */ = {
@@ -380,17 +391,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BDB4B4A27DA0255004DF2BA /* AddSFSymbolToText.swift in Sources */,
-				1BDB4B5627DB86AE004DF2BA /* BaseSubcategoryViewModel.swift in Sources */,
 				1BDB4B2527D8AE66004DF2BA /* SubcategoryCell.swift in Sources */,
+				1BDB4B6627DF84E6004DF2BA /* LifeViewModel.swift in Sources */,
 				1BDB4B3D27D8F07A004DF2BA /* HobbyViewController.swift in Sources */,
-				1BDB4B3927D8F037004DF2BA /* LifeViewModel.swift in Sources */,
-				1BDB4B5927DF2E0E004DF2BA /* BaseSeeAllView.swift in Sources */,
 				1BDB4B3727D8EFF2004DF2BA /* LifeViewController.swift in Sources */,
+				1BDB4B5C27DF3D21004DF2BA /* SeeAllViewController.swift in Sources */,
 				1BDB4B3527D8EEEE004DF2BA /* WorkViewModel.swift in Sources */,
-				1BDB4B3B27D8F05F004DF2BA /* HobbyViewModel.swift in Sources */,
+				1BDB4B6427DF84C8004DF2BA /* HobbyViewModel.swift in Sources */,
+				1BDB4B5F27DF504D004DF2BA /* HeaderCell.swift in Sources */,
 				1BDB4B4D27DA3B2A004DF2BA /* SubcategoryModel.swift in Sources */,
 				1BDB4B4427D9E5AE004DF2BA /* SubcategoryCollectionView.swift in Sources */,
 				1BDB4B0827D8A7C7004DF2BA /* AppDelegate.swift in Sources */,
+				1BDB4B6827DF86F3004DF2BA /* SeeAllViewModel.swift in Sources */,
 				1BDB4B3327D8EE57004DF2BA /* WorkViewController.swift in Sources */,
 				1BDB4B5427DB50D4004DF2BA /* CategoryCell.swift in Sources */,
 				1BDB4B1D27D8A857004DF2BA /* CategoryListViewController.swift in Sources */,

@@ -2,7 +2,7 @@
 //  LifeViewModel.swift
 //  CategoryApp
 //
-//  Created by pavels.garklavs on 09/03/2022.
+//  Created by pavels.garklavs on 14/03/2022.
 //
 
 import Foundation
